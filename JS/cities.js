@@ -13,7 +13,13 @@ inputText.addEventListener('keyup',function(){
         const foundCities = findTheCorrespondingCities(this.value,cities);
 
         const foundCitiesHTML = foundCities.map((city)=>{
-            return `<div class="cities"><div>${city.city}  , ${city.state}</div></div>`
+            const regex = new RegExp(this.value,'gi');
+            const highlightedTextCity = city.city.replace(regex,`<span class="highlighted">
+            ${this.value}</span>`)
+            const regex2 = new RegExp(this.value,'gi');
+            const highlightedTextState = city.state.replace(regex2,`<span class="highlighted">
+            ${this.value}</span>`)
+            return `<div class="cities">${highlightedTextCity}  , ${highlightedTextState}</div>`
         }).join('');
 
         if(!foundCitiesHTML){
@@ -32,5 +38,5 @@ function findTheCorrespondingCities(TheValue,Cities){
     return Cities.filter((city)=>{
         const regex = new RegExp(TheValue, 'gi')
         return city.city.match(regex);
-    })
+    });
 }
