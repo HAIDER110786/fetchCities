@@ -1,0 +1,42 @@
+body{
+    margin:0px;
+    font-family:sans-serif;
+    background-color: cornflowerblue;
+}
+
+.mainDiv{
+    height: max-content;
+    background:cornflowerblue;
+    display: flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+input{
+    width:50%;
+    margin-top:50px;
+    border-radius: 20px;
+    border: none;
+    font-size:20px;
+    padding:10px 15px;
+}
+
+input:focus{
+    outline: none;
+}
+
+.cityList{
+    background-color:white;
+    width: 50%;
+    margin: 20px 0px;
+    color: cornflowerblue;
+}
+
+.cities{
+    height: 40px;
+    border-top:1px solid cornflowerblue;
+    width: 100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
